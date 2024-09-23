@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: crawler-104
+  labels:
+    app: crawler
+spec:
+  template:
+    metadata:
+      labels:
+        app: crawler
+    spec:
+      containers:
+        - name: crawler-104
+          image: crawler:0.0.2
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Never
+  backoffLimit: 1
+  
